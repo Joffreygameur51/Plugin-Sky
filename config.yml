@@ -1,0 +1,135 @@
+# =============================================
+#   NationsPlugin - Configuration
+#   Inspiré de NationsGlory
+# =============================================
+
+# Paramètres généraux
+general:
+  # Langue des messages (fr = Français)
+  language: fr
+  # Temps de téléportation en secondes (0 = immédiat)
+  teleport-delay: 3
+  # Prefixe des messages
+  prefix: "&8[&6Nations&8]"
+
+# =============================================
+#  SYSTÈME DE NIVEAUX CONFIGURABLES
+# =============================================
+# Vous pouvez ajouter autant de niveaux que vous voulez
+# can-be-empire: true = le pays peut devenir un Empire à ce niveau
+# max-colonies: nombre max de colonies (seulement pour les Empires)
+
+levels:
+  1:
+    name: "Village"
+    color: "&7"
+    xp-required: 0
+    max-members: 10
+    daily-income: 50.0
+    can-be-empire: false
+    max-colonies: 0
+
+  2:
+    name: "Ville"
+    color: "&a"
+    xp-required: 1000
+    max-members: 20
+    daily-income: 150.0
+    can-be-empire: false
+    max-colonies: 0
+
+  3:
+    name: "Cité"
+    color: "&b"
+    xp-required: 5000
+    max-members: 40
+    daily-income: 300.0
+    can-be-empire: false
+    max-colonies: 0
+
+  4:
+    name: "Royaume"
+    color: "&6"
+    xp-required: 15000
+    max-members: 60
+    daily-income: 600.0
+    can-be-empire: true
+    max-colonies: 2
+
+  5:
+    name: "Grand Royaume"
+    color: "&e"
+    xp-required: 50000
+    max-members: 100
+    daily-income: 1200.0
+    can-be-empire: true
+    max-colonies: 4
+
+  6:
+    name: "Empire Suprême"
+    color: "&c"
+    xp-required: 150000
+    max-members: 200
+    daily-income: 3000.0
+    can-be-empire: true
+    max-colonies: 8
+
+# =============================================
+#  SYSTÈME EMPIRE
+# =============================================
+empire:
+  # Coût pour devenir un Empire ($ en trésorerie)
+  upgrade-cost: 10000.0
+  # Niveau minimum requis pour devenir Empire
+  min-level: 4
+
+# =============================================
+#  XP GAGNÉ PAR ACTIONS
+# =============================================
+xp:
+  block-break: 1
+  block-place: 1
+  kill-player: 50
+  kill-mob: 5
+  login: 10
+
+# =============================================
+#  HOMES PAR DÉFAUT (Coordonnées automatiques)
+# =============================================
+# Quand un pays est créé avec ce nom, le home est automatiquement défini.
+# Format: /nation creer France -> home à x:100, y:64, z:200, world:world
+#
+# Exemple:
+# default-homes:
+#   france:
+#     world: world
+#     x: 100.0
+#     y: 64.0
+#     z: 200.0
+#   allemagne:
+#     world: world
+#     x: -500.0
+#     y: 64.0
+#     z: 300.0
+
+default-homes: {}
+
+# =============================================
+#  ÉCONOMIE (Vault requis pour utilisation réelle)
+# =============================================
+economy:
+  # Si true, utilise Vault pour les transactions
+  use-vault: false
+  # Coût de création d'une nation
+  creation-cost: 0.0
+
+# =============================================
+#  MESSAGES
+# =============================================
+messages:
+  no-nation: "&cVous n'êtes dans aucune nation. Tapez /nation creer <nom>"
+  already-in-nation: "&cVous êtes déjà dans une nation !"
+  not-leader: "&cSeul le chef peut faire cette action."
+  nation-created: "&a[Nations] La nation &b{name} &aa été créée avec succès !"
+  nation-disbanded: "&c[Nations] La nation &b{name} &ca été dissoute."
+  empire-created: "&6[Nations] ⚔ L'Empire &e{name} &6est né ! Gloire à l'Empire !"
